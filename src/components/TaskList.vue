@@ -32,7 +32,7 @@
           v-if="!taskList || !taskList.length"
         >The Epic doesn't have the task. You can create one.</span>
       </transition>
-      <transition-group name="list" tag="div">
+      <transition-group name="list" tag="div" class="position-relative">
         <div v-for="item in taskList" :key="item.id">
           <div class="card w-100">
             <div class="card-body">
@@ -184,6 +184,10 @@ export default {
 .list-enter-active,
 .list-leave-active {
   transition: all 1s;
+}
+.list-leave-active {
+  position: absolute;
+  width: 100%;
 }
 .list-enter,
 .list-leave-to {
